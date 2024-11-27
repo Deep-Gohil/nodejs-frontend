@@ -6,7 +6,7 @@ let isVerified = Cookies.get("isVerified");
 
 console.log("isVerified:", isVerified);
 
-if (!isVerified || !undefined) {  // Check if `isVerified` is not true
+if (!isVerified) {  // Check if `isVerified` is not true
     document.getElementById("alert").innerHTML = `
         <div class="alert alert-warning" role="alert">
             Please verify your email to access all features!

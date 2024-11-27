@@ -21,6 +21,7 @@ const userApi = {
           Cookies.set("isVerified", res.isVerified);
       } else {
         console.error("Signup failed", res);
+        alert("Signup Failed")
       }
     } catch (error) {
       console.error("Error during signup:", error.message);
