@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:8090";
+const baseUrl = "https://nodejs-backend-wtcp.onrender.com";
 
 const userApi = {
   signup: async (user) => {
