@@ -16,7 +16,7 @@ const userApi = {
       if (res.token) {
         let a = await Cookies.set("token", res.token, { expires: 7 });
         a
-          ? (window.location.href = "http://127.0.0.1:5501/index.html")
+          ? (window.location.href = "/")
           : console.log("Not set");
           Cookies.set("isVerified", res.isVerified);
       } else {
