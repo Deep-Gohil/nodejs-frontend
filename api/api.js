@@ -1,9 +1,13 @@
-const baseUrl = "https://nodejs-backend-wtcp.onrender.com";
+// const baseUrl = "https://nodejs-backend-wtcp.onrender.com";
+
+import { baseURL } from "../middleware/baseUrl.js";
+console.log(baseURL());
+
 
 const userApi = {
   signup: async (user) => {
     try {
-      let req = await fetch(`${baseUrl}/user/signup`, {
+      let req = await fetch(`${baseURL()}/user/signup`, {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -30,7 +34,7 @@ const userApi = {
 
   login: async (user) => {
     try {
-      let req = await fetch(`${baseUrl}/user/login`, {
+      let req = await fetch(`${baseURL()}/user/login`, {
         method: "POST",
         headers: {
           "content-type": "application/json",
