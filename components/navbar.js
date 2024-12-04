@@ -144,6 +144,13 @@ const navbar = () => {
                    </li>`
                 : ""
             }
+            ${
+              decodedToken
+                ? `<li class="nav-item">
+                     <a class="nav-link" href="/pages/addProducts.html">Add Products</a>
+                   </li>`
+                : ""
+            }
           </ul>
           <form class="d-flex" role="search">
             <input

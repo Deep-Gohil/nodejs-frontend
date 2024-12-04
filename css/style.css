@@ -77,3 +77,23 @@ body{
 .detail-container h1 { 
     font-weight: 700;
 }
+
+/* add products css  */
+
+.form{
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#addProductForm{
+    display: flex;
+    flex-direction: column;
+    height: 40vh;
+    gap: 5%;
+}
+#addProductForm input{
+    width: 200px;
+}

@@ -1,25 +1,43 @@
-import { baseURL } from "../middleware/baseUrl";
+import { baseURL } from "../middleware/baseUrl.js";
 
-const productApi = {
+console.log(baseURL());
+
+export const productApi = {
+    // create: async (data) => {
+    //     try {
+    //         let req = await fetch(`${baseURL()}/product/`, {
+    //             method: "POST",
+    //             headers: {
+    //                 "content-type": "application/json",
+    //                 // "Authorization": `Bearer ${token}`
+    //             },
+    //             body: JSON.stringify(data)
+    //         });
+    //         if (!req.ok) {
+    //             throw new Error("Failed to create product");
+    //         }
+    //         let res = await req.json();
+    //         res.send(data);
+    //     } catch (error) {
+    //         console.error("Error during product creation:", error.message);
+    //     }
+    // },
     create: async (data) => {
         try {
-            let req = await fetch(`${baseURL()}/product/create`, {
-                method: "POST",
-                headers: {
-                    "content-type": "application/json",
-                    // "Authorization": `Bearer ${token}`
-                },
-                body: JSON.stringify(data)
-            });
-            if (!req.ok) {
-                throw new Error("Failed to create product");
-            }
-            let res = await req.json();
-            return res;
+          let product = await fetch(`${baseURL()}/products`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                // "Authorization": `Bearer ${getToken()}`,
+            },
+            body: data,
+          });
+          let res = await product.json();
+          return res;
         } catch (error) {
-            console.error("Error during product creation:", error.message);
+          console.log(error);
         }
-    },
+      },
     getAllProducts:async()=>{
         try {
             let req = await fetch(`${baseURL()}/product/all`, {
@@ -38,3 +56,4 @@ const productApi = {
         }
     }
 }
+
